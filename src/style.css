@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+
+body {
+    margin: 0;
+    background-color: #f1f5f9;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+    grid-template-columns: 1fr 3fr 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.5%;
+    background-color: #2563eb;
+    
+}
+
+.heading {
+        font-family: 'Lora', serif; /* A beautiful serif font */
+        font-size: 36px; /* Large font size */
+        font-weight: bold; /* Make it bold */
+        color: #f1f5f9; /* Dark gray color */
+}
+
+.practiceButton {
+    position: fixed;
+    bottom: 0;
+}
+
+/*male of female questions */
+.mOrFButtonHolder {
+    
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    gap: 6%;
+}
+.maleButton {
+    height: 50%;
+    width: 47%;
+    font-size: xx-large;
+}
+.femaleButton {
+    height: 50%;
+    width: 47%;
+    font-size: xx-large;
+}
+
