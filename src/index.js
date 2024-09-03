@@ -6,7 +6,15 @@ import { maleOrFemaleSelection } from "./logic-user-questions";
 
 
 export const information = {
-    maleOrFemale: ''
+    maleOrFemale: '',
+    age: '',
+    weight: '',
+    height: '',
+    exerciseLevel: '',
+    job: '',
+    goal: '',
+    goalWeight: '',
+    time: ''
 };
 
 
@@ -16,3 +24,13 @@ function runProgram () {
 }
 
 runProgram();
+
+document.addEventListener('DOMContentLoaded', () => {
+
+const practiceButton = document.querySelector('.practiceButton');
+practiceButton.addEventListener('click', () => {
+    
+
+
+})
+})

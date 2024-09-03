@@ -19,4 +19,12 @@ export function displayMaleOrFemale () {
         buttonHolder.append(femaleButton);
 }
 
+export function displayAgeQuestion () { //This will both remove the male female Q and add the age Q
+        //Removing the current buttons
+        const maleOrFemaleButtons = document.querySelector('.mOrFButtonHolder');
+        maleOrFemaleButtons.remove();
+
+
+}
+
 
