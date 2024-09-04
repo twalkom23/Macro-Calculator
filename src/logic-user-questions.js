@@ -9,10 +9,12 @@ export function maleOrFemaleSelection() {
         const buttonSelection = event.target.classList.value;
         if (buttonSelection === 'maleButton') {
             information.maleOrFemale = 'male';
-        } else {
+            displayAgeQuestion();
+        } else if (buttonSelection === 'femaleButton') {
             information.maleOrFemale = 'female';
+            displayAgeQuestion();
         }
-        displayAgeQuestion();
+        
     
     })
 

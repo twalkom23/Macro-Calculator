@@ -51,3 +51,46 @@ body {
     font-size: xx-large;
 }
 
+/* age slider */
+.ageSliderBox {
+    grid-row: 2 / 3;
+    grid-column: 2/3;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+}
+.ageSliderBox label {
+    font-size: xx-large;
+    font-weight: bold;
+}
+.sliderButtonContainer {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+}
+.sliderButtonContainer p {
+    font-size: xx-large;
+    margin-left: 5%;
+}
+
+.sliderButtonContainer input {
+    height: 200%;
+    width: 200%;
+}
+.sliderAgeButton {
+    height: 50%;
+    
+    border-radius: 8px;
+    border: none;
+    background-color: #2563eb;
+    color: white;
+    margin-left: 10%;
+}
+.sliderAgeButton:hover {
+    background-color: grey;
+}
+
+
