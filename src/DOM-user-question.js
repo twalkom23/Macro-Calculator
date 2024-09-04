@@ -1,4 +1,4 @@
-import { information } from ".";
+
 
 //This will control all of the DOM manipulation for the questions
 const body = document.querySelector('body');

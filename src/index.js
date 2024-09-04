@@ -2,7 +2,7 @@ import _ from 'lodash';
 import './style.css';
 
 import { displayMaleOrFemale } from "./DOM-user-question";
-import { maleOrFemaleSelection } from "./logic-user-questions";
+import { maleOrFemaleSelection, ageSelection } from "./logic-user-questions";
 
 
 export const information = {
@@ -21,6 +21,7 @@ export const information = {
 function runProgram () {
     displayMaleOrFemale();
     maleOrFemaleSelection();
+    ageSelection();
 }
 
 runProgram();
@@ -29,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const practiceButton = document.querySelector('.practiceButton');
 practiceButton.addEventListener('click', () => {
-    
+    console.log(information);
 
 
 })
 })
+
