@@ -30,3 +30,12 @@ export async function ageSelection () {
 
 }
 
+export async function heightSelection () {
+    const button = await waitForElement('.sliderHeightButton');
+    const heightValue = document.getElementById('heightSlider');
+
+    button.addEventListener('click', () => {
+        information.height = heightValue.value;
+    })
+}
+
