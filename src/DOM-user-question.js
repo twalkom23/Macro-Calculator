@@ -1,4 +1,4 @@
-
+import { removeDiv } from "./other";
 
 //This will control all of the DOM manipulation for the questions
 const body = document.querySelector('body');
@@ -22,9 +22,8 @@ export function displayMaleOrFemale () {
 }
 
 export function displayAgeQuestion () { //This will both remove the male female Q and add the age Q
-        //Removing the current buttons
-        const maleOrFemaleButtons = document.querySelector('.mOrFButtonHolder');
-        maleOrFemaleButtons.remove();
+        removeDiv('.mOrFButtonHolder');
+        
         //Adding the age question
         const sliderBox = document.createElement('div');
         sliderBox.classList.add('ageSliderBox');
@@ -61,6 +60,49 @@ export function displayAgeQuestion () { //This will both remove the male female 
 
         slider.addEventListener('input', function() {
                 sliderDisplay.textContent = slider.value;
+        })
+
+}
+
+export function displayHeightQuestion() {//Will remove the age dom and add the height dom
+        removeDiv('.ageSliderBox');
+
+
+        const sliderBox = document.createElement('div');
+        sliderBox.classList.add('displayHeightBox');
+
+        const sliderLabel = document.createElement('label');
+        sliderLabel.setAttribute('for', 'heightSlider');
+        sliderLabel.textContent = 'Select your height: ';
+
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.id = 'heightSlider';
+        slider.name = 'height';
+        slider.min = 100;
+        slider.max = 240;
+        slider.value = 170;
+
+        const sliderDisplay = document.createElement('p');
+        sliderDisplay.id = 'heightValue';
+        sliderDisplay.textContent = slider.value + ' cm';
+
+        const sliderButton = document.createElement('button');
+        sliderButton.classList.add('sliderHeightButton');
+        sliderButton.textContent = 'Enter';
+       
+        const sliderOutPutButtonHolder = document.createElement('div');
+        sliderOutPutButtonHolder.classList.add('sliderHeightButtonContainer');
+
+        sliderOutPutButtonHolder.appendChild(slider);
+        sliderOutPutButtonHolder.appendChild(sliderDisplay);
+        sliderOutPutButtonHolder.appendChild(sliderButton);
+        sliderBox.appendChild(sliderLabel);
+        sliderBox.appendChild(sliderOutPutButtonHolder);
+        body.appendChild(sliderBox);
+
+        slider.addEventListener('input', function() {
+                sliderDisplay.textContent = slider.value + ' cm';
         })
 
 }

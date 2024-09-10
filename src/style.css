@@ -94,3 +94,45 @@ body {
 }
 
 
+/*Height DOM */
+.displayHeightBox {
+    grid-row: 2 / 3;
+    grid-column: 2/3;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15%;
+}
+.displayHeightBox label {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.sliderHeightButtonContainer {
+    width: 150%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sliderHeightButtonContainer input {
+    width: 60%;
+}
+.sliderHeightButtonContainer p {
+    font-size: x-large;
+}
+.sliderHeightButton {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+
+}
+
+.sliderHeightButton:hover {
+    background-color: gray;
+}
+
+

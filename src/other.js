@@ -10,3 +10,8 @@ export function waitForElement(selector) {
         }, 100); // Check every 100ms
     });
 }
+
+export function removeDiv (divClass) {
+    const divToRemove = document.querySelector(divClass);
+    divToRemove.remove();
+}
