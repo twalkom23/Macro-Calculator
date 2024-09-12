@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import './style.css';
 
-import { displayMaleOrFemale } from "./DOM-user-question";
+import { displayMaleOrFemale, displayActivityQuestion } from "./DOM-user-question";
 import { maleOrFemaleSelection, ageSelection, heightSelection } from "./logic-user-questions";
 
 

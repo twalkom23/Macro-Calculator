@@ -107,4 +107,92 @@ export function displayHeightQuestion() {//Will remove the age dom and add the h
 
 }
 
+export function displayActivityQuestion() {
+        removeDiv('.displayHeightBox');
+
+        const activityBox = document.createElement('div');
+        activityBox.classList.add('activityContainer');
+        //main Label
+        const activityMainLabel = document.createElement('label');
+        activityMainLabel.classList.add('activityMainLabel');
+        activityMainLabel.setAttribute('for', 'activityQuestion');
+        activityMainLabel.textContent = 'Choose your activity level: ';
+
+        //sedentary - 1.2 Multiplier
+        const sedentaryContainer = document.createElement('div');
+        const sedentaryInput = document.createElement('input');
+        sedentaryInput.type = 'radio';
+        sedentaryInput.id = 'sedentaryOption';
+        sedentaryInput.name = 'activityLevel';
+        sedentaryInput.value = 'sedentary';
+        const sedentaryLabel = document.createElement('label');
+        sedentaryLabel.for = 'sedentaryOption';
+        sedentaryLabel.textContent = 'Sedentary (Little or no exercise)';
+        sedentaryContainer.appendChild(sedentaryInput);
+        sedentaryContainer.appendChild(sedentaryLabel);
+
+        //lightly active - 1.375 Multiplier
+        const lightlyActiveContainer = document.createElement('div');
+        const lightlyActiveInput = document.createElement('input');
+        lightlyActiveInput.type = 'radio';
+        lightlyActiveInput.id = 'lightlyActiveOption';
+        lightlyActiveInput.name = 'activityLevel';
+        lightlyActiveInput.value = 'lightlyActive';
+        const lightlyActiveLabel = document.createElement('label');
+        lightlyActiveLabel.for = 'lightlyActiveOption';
+        lightlyActiveLabel.textContent = 'Lightly Active (light exercise 1-3 days a week)';
+        lightlyActiveContainer.appendChild(lightlyActiveInput);
+        lightlyActiveContainer.appendChild(lightlyActiveLabel);
+
+        //Moderately Active - 1.55 Multiplier
+        const moderatelyActiveContainer = document.createElement('div');
+        const moderatelyActiveInput = document.createElement('input');
+        moderatelyActiveInput.type = 'radio';
+        moderatelyActiveInput.id = 'moderatelyActiveOption';
+        moderatelyActiveInput.name = 'activityLevel';
+        moderatelyActiveInput.value = 'moderatelyActive';
+        const moderatelyActiveLabel = document.createElement('label');
+        moderatelyActiveLabel.for = 'moderatelyActiveOption';
+        moderatelyActiveLabel.textContent = 'Moderately Active (moderate exercise 3-5 days a week)';
+        moderatelyActiveContainer.appendChild(moderatelyActiveInput);
+        moderatelyActiveContainer.appendChild(moderatelyActiveLabel);
+
+        //Very Active - 1.725 multiplier
+        const veryActiveContainer = document.createElement('div');
+        const veryActiveInput = document.createElement('input');
+        veryActiveInput.type = 'radio';
+        veryActiveInput.id = 'veryActiveOption';
+        veryActiveInput.name = 'activityLevel';
+        veryActiveInput.value = 'veryActive';
+        const veryActiveLabel = document.createElement('label');
+        veryActiveLabel.for = 'veryActiveOption';
+        veryActiveLabel.textContent = 'Very Active (Hard exercise 6-7 days a week)';
+        veryActiveContainer.appendChild(veryActiveInput);
+        veryActiveContainer.appendChild(veryActiveLabel);
+
+        //Extra active - 1.9 Multiplier
+        const extraActiveContainer = document.createElement('div');
+        const extraActiveInput = document.createElement('input');
+        extraActiveInput.type = 'radio';
+        extraActiveInput.id = 'extraActiveOption';
+        extraActiveInput.name = 'activityLevel';
+        extraActiveInput.value = 'extraActive';
+        const extraActiveLabel = document.createElement('label');
+        extraActiveLabel.for = 'extraActiveOption';
+        extraActiveLabel.textContent = 'Extra Active (very hard exercise, physicial job or training twice a day)';
+        extraActiveContainer.appendChild(extraActiveInput);
+        extraActiveContainer.appendChild(extraActiveLabel);
+
+
+
+        activityBox.appendChild(activityMainLabel);
+        activityBox.appendChild(sedentaryContainer);
+        activityBox.appendChild(lightlyActiveContainer);
+        activityBox.appendChild(moderatelyActiveContainer);
+        activityBox.appendChild(veryActiveContainer);
+        activityBox.appendChild(extraActiveContainer);
+
+        body.appendChild(activityBox);
+}
+
 
