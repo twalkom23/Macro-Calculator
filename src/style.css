@@ -83,10 +83,11 @@ body {
 .sliderAgeButton {
     height: 50%;
     
-    border-radius: 8px;
-    border: none;
     background-color: #2563eb;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
     margin-left: 10%;
 }
 .sliderAgeButton:hover {
@@ -143,11 +144,20 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 20%;
-    gap: 5%;
+    gap: 3%;
     
 }
 .activityMainLabel {
     font-size: xx-large;
     font-weight: bold;
+}
+
+.activitySubmitButton {
+    width: 20%;
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
 }
 
