@@ -110,7 +110,7 @@ export function displayHeightQuestion() {//Will remove the age dom and add the h
 export function displayActivityQuestion() {
         removeDiv('.displayHeightBox');
 
-        const activityBox = document.createElement('form');
+        const activityBox = document.createElement('div');
         activityBox.classList.add('activityContainer');
         //main Label
         const activityMainLabel = document.createElement('label');
@@ -183,11 +183,6 @@ export function displayActivityQuestion() {
         extraActiveContainer.appendChild(extraActiveInput);
         extraActiveContainer.appendChild(extraActiveLabel);
 
-        //Submit button
-        const submitButton = document.createElement('button');
-        submitButton.classList.add('activitySubmitButton');
-        submitButton.textContent = 'Submit';
-
 
 
         activityBox.appendChild(activityMainLabel);
@@ -196,9 +191,19 @@ export function displayActivityQuestion() {
         activityBox.appendChild(moderatelyActiveContainer);
         activityBox.appendChild(veryActiveContainer);
         activityBox.appendChild(extraActiveContainer);
+
+        //Submit button
+        const submitButton = document.createElement('button');
+        submitButton.classList.add('activitySubmitButton');
+        submitButton.textContent = 'Submit';
+
         activityBox.appendChild(submitButton);
 
         body.appendChild(activityBox);
+}
+
+export function displayGoalQuestion () {
+        removeDiv('.activityContainer');
 }
 
 

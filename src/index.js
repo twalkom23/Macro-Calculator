@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import './style.css';
 
-import { displayMaleOrFemale, displayActivityQuestion } from "./DOM-user-question";
-import { maleOrFemaleSelection, ageSelection, heightSelection } from "./logic-user-questions";
+import { displayMaleOrFemale} from "./DOM-user-question";
+import { maleOrFemaleSelection, ageSelection, heightSelection, activitySelection } from "./logic-user-questions";
 
 
 export const information = {
@@ -11,7 +11,6 @@ export const information = {
     weight: '',
     height: '',
     exerciseLevel: '',
-    job: '',
     goal: '',
     goalWeight: '',
     time: ''
@@ -23,6 +22,7 @@ function runProgram () {
     maleOrFemaleSelection();
     ageSelection();
     heightSelection();
+    activitySelection();
 }
 
 runProgram();

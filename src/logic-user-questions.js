@@ -2,7 +2,7 @@ import { waitForElement } from "./other";
 
 //This will be the file that contains all the user questions to be used on the page
 import { information } from ".";
-import { displayAgeQuestion, displayHeightQuestion, displayActivityQuestion } from "./DOM-user-question";
+import { displayAgeQuestion, displayHeightQuestion, displayActivityQuestion, displayGoalQuestion } from "./DOM-user-question";
 //below I will have all the logic for each of the questions. All in seperate functions to keep them seperate
 export function maleOrFemaleSelection() {
     const buttonContainer = document.querySelector('.mOrFButtonHolder');
@@ -30,6 +30,7 @@ export async function ageSelection () {
 
 }
 
+//logic for the height selection
 export async function heightSelection () {
     const button = await waitForElement('.sliderHeightButton');
     const heightValue = document.getElementById('heightSlider');
@@ -37,6 +38,21 @@ export async function heightSelection () {
     button.addEventListener('click', () => {
         information.height = heightValue.value;
         displayActivityQuestion();
+    })
+}
+
+//logic for the activity selection
+export async function activitySelection () {
+    const button = await waitForElement('.activitySubmitButton');
+    const activityLevel = document.querySelector('.activityContainer');
+
+    button.addEventListener('click', () => {
+        event.preventDefault();
+        const answer = document.querySelector('input[name="activityLevel"]:checked');
+        if (answer!== null) {
+            information.exerciseLevel = answer.value;
+            displayGoalQuestion();
+        }
     })
 }
 

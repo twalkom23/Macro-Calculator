@@ -144,8 +144,7 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 20%;
-    gap: 3%;
-    
+    gap: 5%;
 }
 .activityMainLabel {
     font-size: xx-large;
@@ -161,3 +160,6 @@ body {
     border-radius: 50px;
 }
 
+.activitySubmitButton:hover {
+    background-color: gray;
+}
