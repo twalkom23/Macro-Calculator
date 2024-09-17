@@ -15,3 +15,4 @@ export function removeDiv (divClass) {
     const divToRemove = document.querySelector(divClass);
     divToRemove.remove();
 }
+

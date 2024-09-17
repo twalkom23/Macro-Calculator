@@ -104,11 +104,51 @@ export function displayHeightQuestion() {//Will remove the age dom and add the h
         slider.addEventListener('input', function() {
                 sliderDisplay.textContent = slider.value + ' cm';
         })
+}
 
+export function displayWeightQuestion() {
+        removeDiv('.displayHeightBox');
+
+        const sliderBox = document.createElement('div');
+        sliderBox.classList.add('displayWeightBox');
+
+        const sliderLabel = document.createElement('label');
+        sliderLabel.setAttribute('for', 'weightSlider');
+        sliderLabel.textContent = 'Select your weight: ';
+
+        const slider = document.createElement('input');
+        slider.type = 'range';
+        slider.id = 'weightSlider';
+        slider.name = 'weight';
+        slider.min = 40;
+        slider.max = 300;
+        slider.value = 90;
+
+        const sliderDisplay = document.createElement('p');
+        sliderDisplay.id = 'weightValue';
+        sliderDisplay.textContent = slider.value + ' kg';
+
+        const sliderButton = document.createElement('button');
+        sliderButton.classList.add('sliderWeightButton');
+        sliderButton.textContent = 'Enter';
+       
+        const sliderOutPutButtonHolder = document.createElement('div');
+        sliderOutPutButtonHolder.classList.add('sliderWeightButtonContainer');
+
+        sliderOutPutButtonHolder.appendChild(slider);
+        sliderOutPutButtonHolder.appendChild(sliderDisplay);
+        sliderOutPutButtonHolder.appendChild(sliderButton);
+        sliderBox.appendChild(sliderLabel);
+        sliderBox.appendChild(sliderOutPutButtonHolder);
+        body.appendChild(sliderBox);
+
+        slider.addEventListener('input', function() {
+                sliderDisplay.textContent = slider.value + ' kg';
+        })
 }
 
 export function displayActivityQuestion() {
-        removeDiv('.displayHeightBox');
+        
 
         const activityBox = document.createElement('div');
         activityBox.classList.add('activityContainer');
