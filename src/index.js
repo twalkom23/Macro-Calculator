@@ -2,7 +2,7 @@ import _ from 'lodash';
 import './style.css';
 
 import { displayMaleOrFemale} from "./DOM-user-question";
-import { maleOrFemaleSelection, ageSelection, heightSelection, activitySelection } from "./logic-user-questions";
+import { maleOrFemaleSelection, ageSelection, heightSelection, activitySelection, weightSelection } from "./logic-user-questions";
 
 
 export const information = {
@@ -22,6 +22,7 @@ function runProgram () {
     maleOrFemaleSelection();
     ageSelection();
     heightSelection();
+    weightSelection();
     activitySelection();
 }
 

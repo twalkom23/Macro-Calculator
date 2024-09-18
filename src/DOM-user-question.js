@@ -148,7 +148,7 @@ export function displayWeightQuestion() {
 }
 
 export function displayActivityQuestion() {
-        
+        removeDiv('.displayWeightBox');
 
         const activityBox = document.createElement('div');
         activityBox.classList.add('activityContainer');
@@ -242,8 +242,15 @@ export function displayActivityQuestion() {
         body.appendChild(activityBox);
 }
 
-export function displayGoalQuestion () {
+export function displayGoalQuestion (TDEE) {
         removeDiv('.activityContainer');
+
+        const goalBox = document.createElement('div');
+        goalBox.classList.add('goalBox');
+        const TDEEDisplay = document.createElement('p');
+        TDEEDisplay.classList.add('TDEEDisplay');
+        TDEEDisplay.textContent = `Based on the information you entered, your TDEE is ${TDEE}`;
+
 }
 
 

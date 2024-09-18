@@ -41,6 +41,17 @@ export async function heightSelection () {
     })
 }
 
+//logic for the height selection
+export async function weightSelection () {
+    const button = await waitForElement('.sliderWeightButton');
+    const weightValue = document.getElementById('weightSlider');
+
+    button.addEventListener('click', () => {
+        information.weight = weightValue.value;
+        displayActivityQuestion();
+    })
+}
+
 //logic for the activity selection
 export async function activitySelection () {
     const button = await waitForElement('.activitySubmitButton');
@@ -51,8 +62,8 @@ export async function activitySelection () {
         const answer = document.querySelector('input[name="activityLevel"]:checked');
         if (answer!== null) {
             information.exerciseLevel = answer.value;
-            totalDailyExpenditure();
-            displayGoalQuestion();
+            let TDEE = Math.floor(totalDailyExpenditure());
+            displayGoalQuestion(TDEE);
         }
     })
 }
@@ -61,17 +72,41 @@ export async function activitySelection () {
 
 export function totalDailyExpenditure () {
     //BMR - needs to first be worked out and then use the activity multiplier to return a result, is slightly different for men and women
-    let weightInKgs = information.weight;
-    console.log(weightInKgs);
+    let age = parseInt(information.age);
+    let weightInKgs = parseInt(information.weight);
+    let heightInCms = parseInt(information.height);
+    let exerciseMultiplier = 0;
+    let BMR = 0;
+    
+    switch (information.exerciseLevel) { //To convert the activity selection to a multiplier
+        case "sedentary":
+            exerciseMultiplier = 1.2;
+            break;
+        
+        case "lightlyActive":
+            exerciseMultiplier = 1.375;
+            break;
+
+        case "moderatelyActive":
+            exerciseMultiplier = 1.55;
+            break;
+
+        case "veryActive":
+            exerciseMultiplier = 1.725;
+            break;
+        
+        case "extraActive":
+            exerciseMultiplier = 1.9;
+            break;
+    }
+
     //BMR for men
     if (information.maleOrFemale === 'male') {
-        
+        BMR = (10 * weightInKgs) + (6.25 * heightInCms) - (5 * age) + 5;
+    } else {
+        //BMR for women
+        BMR = (10 * weightInKgs) + (6.25 * heightInCms) - (5 * age) - 161;
     }
-    
-
-
-
-
-
+    return (BMR * exerciseMultiplier);
 }
 
